@@ -7,10 +7,24 @@
 {% block pageIntro %}Join me on my quest to become a design unicorn{% endblock%}
 
 {% block content %}
-  <h2>Alex's introduction to the big wide world of NHS prototypes</h2>
-  <h3>Find and see a GP journey</h3>
-  <p>Join me on my quest to become a design unicorn</p>
-
+<h4>To do list</h4>
+<fieldset>
+  <div class="form-group">
+    <label for="checkbox-1" class="block-label">
+      <input id="checkbox-1" name="checkbox-group" type="checkbox" value="checkbox-1">
+      Read up on Nunjucks templating language
+    </label>
+    <label for="checkbox-2" class="block-label">
+      <input id="checkbox-2" name="checkbox-group" type="checkbox" value="checkbox-2">
+      Understand how project directory is structured
+    </label>
+    <label for="checkbox-3" class="block-label">
+      <input id="checkbox-3" name="checkbox-group" type="checkbox" value="checkbox-3">
+      Checkbox 3
+    </label>
+  </div>
+</fieldset>
 {% endblock %}
+
 
 {% block footer %}{% endblock %}
