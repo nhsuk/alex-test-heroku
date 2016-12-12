@@ -53,10 +53,13 @@
 
     <div class="grid-row">
       <div class="grid-3-3">
+        <h3 style="margin-top:32px;">{% block infoPanelTitle%}Test information panel{% endblock %}</h3>
         <div class="muted">
         <div class="reading-width">
-          <h2>Call 111</h2>
-          <p>If you can’t speak to your GP or don’t know what to do next</p>
+          {% block infoPanelContent%}
+          <h2>Test this is working</h2>
+          <p>Another test this is working</p>
+          {% endblock %}
         </div>
       </div>
     </div>

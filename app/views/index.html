@@ -1,30 +1,51 @@
-{% extends '_layouts/layout_2-3.html' %}
+{% extends '_layouts/layout_2-3_1-3.html' %}
 
-{% block page_title %}Index : {{serviceName}}{% endblock %}
+{% block page_title %}Index : {{serviceName}}{% endblock page_title %}
 
-{% block pageTitle %}Alex's introduction to the big wide world of NHS prototypes{% endblock %}
+{% block pageTitle %}Alex's introduction to the big wide world of NHS prototypes{% endblock pageTitle %}
 
-{% block pageIntro %}Join me on my quest to become a design unicorn{% endblock%}
+{% block pageIntro %}Join me on my quest to become a design unicorn{% endblock pageIntro %}
 
 {% block content %}
-<h4>To do list</h4>
-<fieldset>
-  <div class="form-group">
-    <label for="checkbox-1" class="block-label">
-      <input id="checkbox-1" name="checkbox-group" type="checkbox" value="checkbox-1">
-      Read up on Nunjucks templating language
-    </label>
-    <label for="checkbox-2" class="block-label">
-      <input id="checkbox-2" name="checkbox-group" type="checkbox" value="checkbox-2">
-      Understand how project directory is structured
-    </label>
-    <label for="checkbox-3" class="block-label">
-      <input id="checkbox-3" name="checkbox-group" type="checkbox" value="checkbox-3">
-      Create first include
-    </label>
-  </div>
-</fieldset>
+  <h3>To do list</h3>
+  <fieldset>
+    <div class="form-group">
+      <label for="checkbox-1" class="block-label">
+        <input id="checkbox-1" name="checkbox-group" type="checkbox" value="checkbox-1">
+        Read up on Nunjucks templating language
+      </label>
+      <label for="checkbox-2" class="block-label">
+        <input id="checkbox-2" name="checkbox-group" type="checkbox" value="checkbox-2">
+        Understand how project directory is structured
+      </label>
+      <label for="checkbox-3" class="block-label">
+        <input id="checkbox-3" name="checkbox-group" type="checkbox" value="checkbox-3">
+        Create first include
+      </label>
+    </div>
+  </fieldset>
+
+  <h3>Test links</h3>
+  <a href="v1/d1/book-an-appointment-online" class="button">book-an-appointment-online</a>
+  <a href="v1/d1/choose-a-thing" class="button">choose-a-thing</a>
+  <a href="v1/d1/confirm-your-id" class="button">confirm-your-id</a>
+  <a href="v1/d1/content_page_2-3_1-3" class="button">content_page_2-3_1-3</a>
+{% endblock content %}
+
+{% block emergencyContent %}
+  <h2>Warning - this is a work in progress</h2>
+
+  <p>If you dont understand what this page is doing and:</p>
+
+  <ul>
+  <li>it doesnt work</li>
+  <li>it looks rubbish</li>
+  </ul>
+
+  <hr>
+
+  <p>Then just ignore it.</p>
 {% endblock %}
 
-
-{% block footer %}{% endblock %}
+{% block footer %}
+{% endblock footer %}
