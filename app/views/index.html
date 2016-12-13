@@ -7,6 +7,7 @@
 {% block pageIntro %}Join me on my quest to become a design unicorn{% endblock pageIntro %}
 
 {% block content %}
+  <section id="checkboxes">
   <h3>To do list</h3>
   <fieldset>
     <div class="form-group">
@@ -24,12 +25,27 @@
       </label>
     </div>
   </fieldset>
+  </section>
 
-  <h3>Test links</h3>
-  <a href="v1/d1/book-an-appointment-online" class="button">book-an-appointment-online</a>
-  <a href="v1/d1/choose-a-thing" class="button">choose-a-thing</a>
-  <a href="v1/d1/confirm-your-id" class="button">confirm-your-id</a>
-  <a href="v1/d1/content_page_2-3_1-3" class="button">content_page_2-3_1-3</a>
+  <section id="test-links">
+    <h3>Test links</h3>
+    <a href="v1/d1/book-an-appointment-online" class="button">book-an-appointment-online</a>
+    <a href="v1/d1/choose-a-thing" class="button">choose-a-thing</a>
+    <a href="v1/d1/confirm-your-id" class="button">confirm-your-id</a>
+    <a href="v1/d1/content_page_2-3_1-3" class="button">content_page_2-3_1-3</a>
+  </section>
+
+  <section id="info-panel">
+    <h3 style="margin-top:32px;">{% block infoPanelTitle%}Test information panel{% endblock %}</h3>
+    <div class="info-panel">
+    <div class="reading-width">
+      {% block infoPanelContent%}
+      <h2>Test this is working</h2>
+      <p>Another test this is working</p>
+      {% endblock %}
+      </div>
+    </div>
+  </section>
 {% endblock content %}
 
 {% block emergencyContent %}
@@ -45,7 +61,6 @@
   <hr>
 
   <p>Then just ignore it.</p>
-{% endblock %}
+{% endblock emergencyContent %}
 
-{% block footer %}
-{% endblock footer %}
+{% block footer %}{% endblock footer %}
