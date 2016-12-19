@@ -2,3 +2,66 @@
   <a href="show-list-of-pharmacies" type="submit" class="button"><span style="margin-right: 8px;"><svg style="margin-bottom: -3px;" width="24" height="24" viewBox="0 0 102 140" xmlns="http://www.w3.org/2000/svg"><path d="M75.35 50.645c0 13.98-11.39 25.322-25.438 25.322-14.05 0-25.438-11.342-25.438-25.322 0-13.984 11.39-25.322 25.438-25.322 14.052 0 25.438 11.337 25.438 25.322m26.393 0C101.743 22.675 78.966 0 50.866 0 22.768 0-.01 22.674-.01 50.645c0 12.298 4.407 23.574 11.732 32.345l39.188 56.283L90.67 82.17c1.43-1.78 2.737-3.656 3.917-5.627l.402-.574h-.068c4.33-7.455 6.82-16.097 6.82-25.326" fill="#FFF" fill-rule="evenodd"/>
 </svg></span>Use current location</a>
 </div>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+function success(position) {
+  var s = document.querySelector('#status');
+
+  if (s.className == 'success') {
+    // not sure why we're hitting this twice in FF, I think it's to do with a cached result coming back
+    return;
+  }
+
+  s.innerHTML = "found you!";
+  s.className = 'success';
+
+  var mapcanvas = document.createElement('div');
+  mapcanvas.id = 'mapcanvas';
+  mapcanvas.style.height = '400px';
+  mapcanvas.style.width = '560px';
+
+  document.querySelector('article').appendChild(mapcanvas);
+
+  var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  var myOptions = {
+    zoom: 15,
+    center: latlng,
+    mapTypeControl: false,
+    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+
+  var marker = new google.maps.Marker({
+      position: latlng,
+      map: map,
+      title:"You are here! (at least within a "+position.coords.accuracy+" meter radius)"
+  });
+}
+
+function error(msg) {
+  var s = document.querySelector('#status');
+  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+  s.className = 'fail';
+
+  // console.log(arguments);
+}
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, error);
+} else {
+  error('not supported');
+}
+
+</script>
+<script src="js/prettify.packed.js"></script>
+<script>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>
+try {
+var pageTracker = _gat._getTracker("UA-1656750-18");
+pageTracker._trackPageview();
+} catch(err) {}</script>
