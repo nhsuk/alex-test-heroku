@@ -984,6 +984,17 @@ textarea:focus {
   background-color: #eff9e9;
 }
 
+.or-label {
+  text-align: center;
+  margin: 16px 0;
+}
+
+@media (min-width: 641px) {
+  .or-label {
+    text-align: left;
+  }
+}
+
 .attention {
   border: 12px solid #40add7;
   padding: 32px;

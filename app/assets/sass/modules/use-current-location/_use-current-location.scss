@@ -1,0 +1,8 @@
+.or-label {
+  text-align: center;
+  margin: 16px 0;
+
+  @media (min-width: 641px) {
+    text-align: left;
+  }
+}

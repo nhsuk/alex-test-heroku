@@ -13,15 +13,11 @@
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     {% include '_includes/notification-banner.html' %}
-
     {% include '_includes/service-alert.html' %}
-
 
     {% block header_before %}{% endblock %}
 
     {% include '_includes/masthead.html' %}
-
-
 
     <main id="content" role="main" class="content">
 
@@ -38,34 +34,17 @@
         </div>
       </div>
 
+      <div class="grid-row">
+        <div class="grid-2-3">
+        {% block content %}{% endblock %}
+        </div>
 
-    <div class="grid-row">
-      <div class="grid-2-3">
-      {% block content %}{% endblock %}
-      </div>
-
-      <div class="grid-1-3">
-        <section class="severe">
-          {% block emergencyContent %}{% endblock %}
-        </section>
-      </div>
-    </div>
-
-    <div class="grid-row">
-      <div class="grid-3-3">
-        <h3 style="margin-top:32px;">{% block infoPanelTitle%}Test information panel{% endblock %}</h3>
-        <div class="muted">
-        <div class="reading-width">
-          {% block infoPanelContent%}
-          <h2>Test this is working</h2>
-          <p>Another test this is working</p>
-          {% endblock %}
+        <div class="grid-1-3">
+          <section class="severe">
+            {% block emergencyContent %}{% endblock %}
+          </section>
         </div>
       </div>
-    </div>
-    </div>
-
-
     </main>
 
     {% include '_includes/footer.html' %}
