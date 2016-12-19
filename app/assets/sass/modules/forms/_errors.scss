@@ -1,6 +1,11 @@
 .error-summary {
   @extend %contain-floats;
 
+  border: 5px solid #338ed1;
+  margin-top: 0;
+  margin-bottom: 45px;
+  padding: 5px 15px 15px;
+
   margin: $leading*2 0;
 
   & > div {
