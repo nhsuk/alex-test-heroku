@@ -999,6 +999,11 @@ textarea:focus {
   }
 }
 
+.use-current-location {
+  margin-top: 50px;
+  margin-bottom: 24px;
+}
+
 .attention {
   border: 12px solid #40add7;
   padding: 32px;

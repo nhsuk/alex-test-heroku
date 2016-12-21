@@ -1,0 +1,49 @@
+{% extends '_layouts/layout_2-3_no_title_block.html' %}
+
+
+{% block page_title %}
+use current location NHS.UK
+{% endblock %}
+
+
+{% block pageTitle %}
+Find a pharmacy
+{% endblock %}
+
+{% block pageIntro %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<form action="show-list-of-pharmacies">
+  <fieldset>
+    <legend>Enter a postcode</legend>
+    <div class="form-group">
+      <input type="text" size="30" name="postcode" style="margin-bottom: -43px;"><span style="padding-left:8px; color:white;">LS6 4JN</span>
+    </div>
+  </fieldset>
+  {% include '_includes/use-current-location-v2.html' %}
+
+  <button type="submit" class="button" style="margin-top: 16px; margin-bottom: 0;">Search</button>
+  <p style="margin-top: 0;"><a href="#" class="link-back">Back</a></p>
+</form>
+
+
+{% endblock %}
+
+
+{% block emergencyContent %}
+
+
+{% endblock%}
+
+{% block mutedCallout%}
+
+
+{% endblock%}
+
+{% block body_after %}
+
+{% endblock %}
